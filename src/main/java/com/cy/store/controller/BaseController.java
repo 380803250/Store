@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.servlet.http.HttpSession;
 
-/** 控制器类的基类 */
+/** 控制器类的基类 08 8.33*/
 public class BaseController {
     /** 操作成功的状态码 */
     public static final int OK = 200;

@@ -299,6 +299,25 @@
 				$("#area-list").append(defaultOption);
 			});
 
+			/***JQuery事件-change()方法**
+
+			 1.定义和用法
+
+			 （1）当元素的值发生改变时，会发生change事件。
+
+			 （2）该事件仅适用于文本域(textfield)，以及textarea和select元素。
+
+			 （3）change()函数触发change事件，或规定当发生change事件时运行的函数。
+
+			 当用于select元素时，change事件会在选择某个选项时发生。当用于textfield或textarea时，该事件会在元素失去焦点时发生。
+
+			 2.触发change事件
+
+			 触发被选元素的change事件。语法：$(selector).change()
+
+			 3.将函数绑定到change事件
+
+			 规定当被选元素的 change 事件发生时运行的函数。语法：$(selector).change(function)*/
 			$("#province-list").change(function() {
 				showCityList();
 			});

@@ -14,4 +14,15 @@ public class LoginInterceptor implements HandlerInterceptor {
         }
         return true;
     }
+
+//    //在调用所有请求方法之前
+//    default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+//        return true;
+//    }
+//    在MODLEVIEW返回之后
+//    default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
+//    }
+//    在请求的所有资源完成之后的方法
+//    default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
+//    }
 }

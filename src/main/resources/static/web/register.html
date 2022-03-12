@@ -145,6 +145,7 @@
 				$.ajax({
 					url: "/users/reg",
 					type: "POST",
+					//jquery检测每个表单控件的值
 					data: $("#form-reg").serialize(),
 					dataType: "json",
 					success: function(json) {

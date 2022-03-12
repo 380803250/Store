@@ -20,6 +20,7 @@ public class AddressServiceImpl implements IAddressService {
     @Autowired
     private IDistrictService districtService;
 
+//  @Value("${user.address.max-count}")
     @Value("${user.address.max-count}")
     private int maxCount;
 
@@ -34,6 +35,7 @@ public class AddressServiceImpl implements IAddressService {
         }
 
         // 补全数据：省、市、区的名称
+        //添加的option中 值只有代码号需要通过地区服务层转为省份名字加入到address
         String provinceName = districtService.getNameByCode(address.getProvinceCode());
         String cityName = districtService.getNameByCode(address.getCityCode());
         String areaName = districtService.getNameByCode(address.getAreaCode());

@@ -24,6 +24,7 @@ public class UserController extends BaseController {
     @Autowired
     private IUserService userService;
 
+    //springboot中前端返回URI中的参数名与传入的JAVA类型比较属性值,如果一致
     @RequestMapping("reg")
     public JsonResult<Void> reg(User user) {
         // 调用业务对象执行注册
@@ -54,16 +55,16 @@ public class UserController extends BaseController {
         return result;
     }
     */
-
+    //非自己封装的pojo类型则直接将请求参数命与方法参数名比较
     @RequestMapping("login")
     public JsonResult<User> login(String username, String password, HttpSession session) {
         // 调用业务对象的方法执行登录，并获取返回值
         User data = userService.login(username, password);
-        //登录成功后，将uid和username存入到HttpSession中
+        //登录成功后，将uid和username存入到HttpSession中,完成数据绑定
         session.setAttribute("uid", data.getUid());
         session.setAttribute("username", data.getUsername());
-        // System.out.println("Session中的uid=" + getUidFromSession(session));
-        // System.out.println("Session中的username=" + getUsernameFromSession(session));
+        System.out.println("Session中的uid=" + getUidFromSession(session));
+        System.out.println("Session中的username=" + getUsernameFromSession(session));
 
         // 将以上返回值和状态码OK封装到响应结果中并返回
         return new JsonResult<User>(OK, data);
